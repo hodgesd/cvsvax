@@ -13,8 +13,22 @@ header ={
 }
 results = requests.get(url, headers = header)
 soup = BS(results.content, "html.parser" )
+
+
 belleville = re.search('BELLEVILLE.+?status":"(.+?)"', soup.text)
 print (belleville.group(1))
-# print(x.group())# print (soup.prettify, 'lxml')
+
+vaxout = "nope"
+vaxin = "yep"
+
+if belleville.group(1) == "Fully Booked":
+  status = vaxout
+else:
+  status = vaxin
+
+print (status)
+
+# print(x.group())# 
+print (soup.prettify, 'lxml')
 
 # print (BS(results.content, 'lxml'))
