@@ -100,7 +100,11 @@ for runway in runways:
 
     print(rw+":",length+"'","x",width+"'",p, "D"+d,treatment)
 
-    appr = runway.find("div", text="Base")
+    # elevs = soup.find_all('di', {'id': re.compile(r'Elevation')})
+    half = runway.find_all('div', {'id': re.compile(r'Base')})
+    print(runway)
+
+
     # appr_elev = appr.find("td", text="Elevation").find_next_sibling("td").text
     # print ("")
     # print ("Approach end elevation: "+appr_elev)

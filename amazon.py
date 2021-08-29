@@ -39,11 +39,13 @@ driver = webdriver.Firefox()
 driver.get('https://www.amazon.com/')
 
 
+
+
 ##################################### -Search Box- ##########################################################################################################
 
 #--Summary: This chunk of code will find the search box on the amazon home page and input the the product you specified above
 
-input_box = driver.find_element_by_xpath('/html/body/div[1]/header/div/div[1]/div[2]/div/form/div[2]/div[1]/input')
+input_box = driver.find_element_by_xpath("//*[@id='twotabsearchtextbox']")
 input_box.send_keys(product)
 input_box.send_keys(Keys.ENTER)
 time.sleep(2)

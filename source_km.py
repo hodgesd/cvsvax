@@ -122,7 +122,10 @@ class Strip:
             print(z, end=" ")
 
 # Prompt for airport input and build FAA url
-airport = input("Airfield: ")
+# airport = input("Airfield: ")
+
+
+
 base = "https://nfdc.faa.gov/nfdcApps/services/ajv5/airportDisplay.jsp?airportId="
 url=base+airport
 
